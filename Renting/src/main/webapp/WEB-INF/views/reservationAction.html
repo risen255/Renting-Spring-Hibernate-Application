@@ -1,0 +1,53 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Strona główna</title>
+<div th:replace="fragments/beforeBody :: beforeBody" />
+</head>
+
+
+<body>
+	<div class="page">
+		<div class="page-container">
+			<div th:replace="fragments/header :: header" />
+
+			<div class="content">
+				<div class="login-action-form">
+					<form action="#"
+						th:action="@{'/pokoj/' + ${room.id} + '/rezerwacja'}"
+						th:object="${reservationAction}" method="post">
+						<table border="0" width="650px">
+							<b th:if="${#fields.hasErrors('global')}" th:errors="*{global}"/><br/>
+							<tr>
+								<td class="column-left">Data przyjazdu:</td><td class="column-center"><input type="date" th:field="*{startDate}"/></td>
+								<td class="column-right"><span th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}"/><br/></td>
+                            </tr>
+                                                
+                            <tr>
+								<td class="column-left">Data wyjazdu:</td><td class="column-center"> <input type="date" th:field="*{endDate}"/></td>
+								<td class="column-right"><span th:if="${#fields.hasErrors('endDate')}" th:errors="*{endDate}"/><br/></td>
+                            </tr>
+                            
+                            <tr>
+	                            <td class="column-left">Płatność:</td>
+	                            <td class="column-center">              
+		                            <select th:field="*{paymentTypeName}">
+										  <option th:each="payment : ${paymentList}" th:value="${payment.paymentType}" th:text="${payment.paymentType}"/>
+									</select>
+								</td>
+							</tr>
+						</table>		
+						
+						<p>
+							<input class="submit-button-orange" type="submit"
+								value="Zarezerwuj pokój" />
+						</p>
+					</form>
+				</div>
+			</div>
+
+			<div th:replace="fragments/footer :: footer" />
+		</div>
+	</div>
+</body>
+</html>

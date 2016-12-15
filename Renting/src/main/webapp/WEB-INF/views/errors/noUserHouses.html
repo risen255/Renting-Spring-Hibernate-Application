@@ -1,0 +1,24 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Strona główna</title>
+<div th:replace="fragments/beforeBody :: beforeBody" />
+</head>
+
+
+<body>
+	<div class="page">
+		<div class="page-container">
+			<div th:replace="fragments/header :: header" />
+			
+			<div class="content">
+				<div class="center-700">
+					Nie masz żadnych domów. Aby dodać nowy pokój najpierw <b><a class="link-style-1" href="/dom/dodaj">musisz dodać nowy dom</a></b>.
+				</div>
+			</div>
+	
+			<div th:replace="fragments/footer :: footer" />
+		</div>
+	</div>
+</body>
+</html>

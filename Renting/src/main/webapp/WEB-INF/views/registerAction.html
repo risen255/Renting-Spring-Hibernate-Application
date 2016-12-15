@@ -1,0 +1,70 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Strona główna</title>
+<div th:replace="fragments/beforeBody :: beforeBody" />
+</head>
+
+
+<body>
+	<div class="page">
+		<div class="page-container">
+			<div th:replace="fragments/header :: header" />
+
+			<div class="content">
+				<div class="register-action-form">
+
+					<form action="#"
+						th:action="@{/zarejestruj}"
+						th:object="${registerAction}" method="post">
+                                            <table border="0" width="650px">
+						<b  class="error" th:if="${#fields.hasErrors('global')}" th:errors="*{global}"/><br/>
+                                                <tr>
+                                                    <td class="column-left">Login:</td><td class="column-center"> <input type="text" th:field="*{login}" /> </td>
+                                                    <td class="column-right"><span class="error" th:if="${#fields.hasErrors('login')}" th:errors="*{login}" colour="red"/><br/></td>
+                                                </tr>
+                                                
+                                                <tr>
+                                                    <td class="column-left">Hasło:</td><td class="column-center"> <input type="password" th:field="*{password}" /></td>
+                                                    <td class="column-right"><span class="error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"/><br/></td>
+                                                </tr>
+                                                
+                                                <tr>
+                                                   <td class="column-left">Powtórz hasło:</td><td class="column-center"> <input type="password" th:field="*{repeatPassword}" /></td>
+                                                    <td class="column-right"><span class="error" th:if="${#fields.hasErrors('repeatPassword')}" th:errors="*{repeatPassword}"/><br/></td>
+                                                </tr>
+                                                
+                                                <tr>
+                                                    <td class="column-left">Imię:</td><td class="column-center"> <input type="text" th:field="*{name}" /></td>
+                                                    <td class="column-right"><span class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"/><br/></td>
+                                                </tr>
+                                                
+                                                <tr>
+                                                    <td class="column-left">Nazwisko:</td><td class="column-center"> <input type="text" th:field="*{surname}" /></td>
+                                                    <td class="column-right"><span class="error" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"/><br/></td>
+                                                </tr>
+                                                
+                                                <tr>
+                                                    <td class="column-left">Wiek:</td><td class="column-center"> <input type="number" th:field="*{age}" /></td>
+                                                    <td class="column-right"><span class="error" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"/><br/></td>
+                                                </tr>
+                                                
+						<tr>
+                                                    <td class="column-left">Płeć:</td>
+                                                    <td class="column-center"><input type="radio" name="sex" value="m" checked="true"/> Mężczyzna<br/>
+                                                        <input type="radio" name="sex" value="f"/> Kobieta<br/></td>
+                                                </tr>
+						</table>
+						<p>
+							<input class="submit-button-orange" type="submit"
+								value="Zarejestruj" />
+						</p>
+					</form>
+				</div>
+			</div>
+
+			<div th:replace="fragments/footer :: footer" />
+		</div>
+	</div>
+</body>
+</html>

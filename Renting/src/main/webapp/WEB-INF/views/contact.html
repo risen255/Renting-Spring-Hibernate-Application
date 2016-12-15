@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Strona główna</title>
+<div th:replace="fragments/beforeBody :: beforeBody" />
+</head>
+
+
+<body>
+	<div class="page">
+		<div class="page-container">
+			<div th:replace="fragments/header :: header" />
+			
+			<div class="room">
+					<a class="room-title-href">
+						<div class="room-title">
+                                                    <span> Uwagi/skargi przyjmujemy na dany adres: naszmail@wp.pl </span>
+						</div>
+					</a>
+				</div>
+	
+			<div th:replace="fragments/footer :: footer" />
+		</div>
+	</div>
+</body>
+</html>

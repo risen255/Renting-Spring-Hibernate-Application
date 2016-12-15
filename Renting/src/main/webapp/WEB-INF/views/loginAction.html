@@ -1,0 +1,44 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Strona główna</title>
+<div th:replace="fragments/beforeBody :: beforeBody" />
+</head>
+
+
+<body>
+	<div class="page">
+		<div class="page-container">
+			<div th:replace="fragments/header :: header" />
+
+			<div class="content">
+				<div class="login-action-form">
+					<form action="#"
+						th:action="@{/zaloguj}"
+						th:object="${loginAction}" method="post">
+						<table border="0" width="650px">
+							<b class="error" th:if="${#fields.hasErrors('global')}" th:errors="*{global}"/><br/>
+							<tr>
+								<td class="column-left">Login: </td><td class="column-center"><input type="text" th:field="*{login}" /></td>
+								<td class="column-right"><span class="error" th:if="${#fields.hasErrors('login')}" th:errors="*{login}"/><br/></td>
+                            </tr>
+                                                
+                            <tr>
+								<td class="column-left">Hasło:</td><td class="column-center"> <input type="password" th:field="*{password}" /></td>
+								<td class="column-right"><span class="error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"/><br/></td>
+                            </tr>
+                            
+                            <tr>
+								<td class="column-left"></td>
+								<td class="column-right"><input class="submit-button-orange" type="submit" value="Zaloguj" /></td>
+                            </tr>
+						</table>
+					</form>
+				</div>
+			</div>
+
+			<div th:replace="fragments/footer :: footer" />
+		</div>
+	</div>
+</body>
+</html>

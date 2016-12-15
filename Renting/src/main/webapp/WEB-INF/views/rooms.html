@@ -1,0 +1,62 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Strona główna</title>
+<div th:replace="fragments/beforeBody :: beforeBody" />
+<script
+	src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://desandro.github.io/3dtransforms/js/utils.js'></script>
+<script src="/js/index.js"></script>
+</head>
+
+
+<body>
+	<div class="page">
+		<div class="page-container">
+			<div th:replace="fragments/header :: header" />
+
+			<div class="content">
+				<div class="adder-linker-content">
+					<a th:href="@{'/pokoj/dodaj'}">
+						<div class="adder-linker-status-title">
+							Dodaj nowy pokój
+						</div>
+					</a>
+				</div>
+			
+				<div class="room" th:each="room : ${roomList}">
+					<a class="room-title-href" th:href="@{'/pokoj/' + ${room.id}}">
+						<div class="room-title">
+							<span th:text="${room.name}" />
+						</div>
+					</a>
+					<div class="room-owner-link" align="center">
+						Właściciel: <a th:href="@{'/uzytkownik/' + ${room.house.owner.id}}"><span th:text="${room.house.owner.login}"/></a>
+                                                </div>	
+					<div class="room-content">
+						Powierzchnia:
+						<span th:text="${room.area}" /> m²<br /> Cena za dzień: <span
+							th:text="${room.pricePerDay}" /> PLN<br /> Nazwa domu: <span
+							th:text="${room.house.name}" /><br /> Miasto: <span
+							th:text="${room.house.city}" /><br /> Typ domu: <span
+							th:text="${room.house.houseType.typeName}" /><br />
+						
+						<div class="room-opinion-link">
+							<b>
+								<a th:href="@{'/pokoj/' + ${room.id}}">
+									Zobacz opinie o tym pokoju
+								</a>
+							</b>
+						</div>
+                                                
+					</div>
+					
+					
+				</div>
+			</div>
+			
+			<div th:replace="fragments/footer :: footer" />
+		</div>
+	</div>
+</body>
+</html>

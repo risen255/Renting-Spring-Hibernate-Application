@@ -1,0 +1,57 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Strona główna</title>
+<div th:replace="fragments/beforeBody :: beforeBody" />
+</head>
+
+
+<body>
+	<div class="page">
+		<div class="page-container">
+			<div th:replace="fragments/header :: header" />
+			
+			<div class="content">
+				<div class="panel">
+					<div class="panel-title">
+						Panel Administratora
+					</div>
+					
+					<div th:replace="fragments/adminNavigation :: adminNavigation" />
+					
+					
+					<div class="panel-content">
+						<div class="panel-center">
+							<form action="#" th:action="@{/panel/platnosci}" th:object="${paymentAction}" method="post">
+								<table border="0" width="700px">
+									<tr>
+										<td class="column-left" style="color: white">Płatność: </td><td class="column-center"><input class="field-style" type="text" th:field="*{paymentType}" /></td>
+		                            	<td class="column-right" style="color: white"><span class="error" th:if="${#fields.hasErrors('paymentType')}" th:errors="*{paymentType}" colour="red"/></td>
+		                            </tr>
+		                            
+		                            <tr>
+										<td class="column-left"></td>
+										<td class="column-right"><input class="submit-button-orange" type="submit" value="Dodaj płatność" /></td>
+		                            </tr>
+								</table>
+							</form>
+							
+							<table style="margin-top: 50px; margin-bottom: 100px;" border="0" width="500px">
+								 <td class="column-left" style="color: white">Aktualne rodzaje płatności:</td>
+		                         <td class="column-center">              
+			                         <select>
+										 <option th:each="payment : ${paymentList}" th:text="${payment.paymentType}"/>
+									</select>
+								</td>
+							</table>
+			
+						</div>
+					</div>
+				</div>
+			</div>
+	
+			<div th:replace="fragments/footer :: footer" />
+		</div>
+	</div>
+</body>
+</html>

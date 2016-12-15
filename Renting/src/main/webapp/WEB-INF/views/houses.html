@@ -1,0 +1,49 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Strona główna</title>
+<div th:replace="fragments/beforeBody :: beforeBody" />
+<script
+	src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://desandro.github.io/3dtransforms/js/utils.js'></script>
+<script src="/js/index.js"></script>
+</head>
+
+
+<body>
+	<div class="page">
+		<div class="page-container">
+			<div th:replace="fragments/header :: header" />
+
+			<div class="content">
+				<div class="adder-linker-content">
+					<a th:href="@{'/dom/dodaj'}">
+						<div class="adder-linker-status-title">
+							Dodaj nowy dom
+						</div>
+					</a>
+				</div>
+			
+				<div class="room" th:each="house : ${houseList}">
+					<a class="room-title-href" th:href="@{'/dom/' + ${house.id}}">
+						<div class="room-title">
+							<span th:text="${house.name}" />
+						</div>
+					</a>
+					<div class="room-owner-link">
+						Właściciel: <a th:href="@{'/uzytkownik/' + ${house.owner.id}}"><span th:text="${house.owner.login}"/></a>
+					</div>
+					<div class="room-content">
+						Miasto: <span th:text="${house.city}" /><br />
+					</div>
+					
+					
+					
+				</div>
+			</div>
+			
+			<div th:replace="fragments/footer :: footer" />
+		</div>
+	</div>
+</body>
+</html>

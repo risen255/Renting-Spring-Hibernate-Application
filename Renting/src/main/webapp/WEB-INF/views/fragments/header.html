@@ -1,0 +1,37 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<div th:fragment="header">
+		<div class="logo">
+			<img src="/images/logo.jpg" />
+		</div>
+		<div class="navigation">
+			<ul>
+				<li><a href="/"><span>Strona główna</span></a></li>
+				<li><a href="/domy"><span>Domy</span></a></li>
+				<li><a href="/pokoje"><span>Pokoje</span></a></li>
+				<li><a href="/kontakt"><span>Kontakt</span></a></li>
+				<li th:if="${userSession.logged == false}"><a href="/zarejestruj"><span>Zarejestruj</span></a></li>
+				
+				
+				<li th:if="${userSession.logged == false}"><a href="/zaloguj"><span>Zaloguj</span></a></li>
+				<li th:if="${userSession.logged == true}">
+					<a href="/wyloguj">
+						<form action="#" th:action="@{/wyloguj}" method="post">
+                                                    <input class="submit-button-blue" type="submit" th:value="${'Wyloguj [' + userSession.user.login + ']'}"/>
+                                                </form>
+					</a>
+				</li>
+				
+				<li th:if="${userSession.logged == true and userSession.isAdministrator() == true}">
+					<a href="/panel"><span>Panel Administratora</span></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+
+</html>

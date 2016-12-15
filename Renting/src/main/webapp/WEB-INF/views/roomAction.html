@@ -1,0 +1,63 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Strona główna</title>
+<div th:replace="fragments/beforeBody :: beforeBody" />
+</head>
+
+
+<body>
+	<div class="page">
+		<div class="page-container">
+			<div th:replace="fragments/header :: header" />
+
+			<div class="content">
+				<div class="login-action-form">
+					<form action="#"
+						th:action="@{/pokoj/dodaj}"
+						th:object="${roomAction}" method="post" enctype="multipart/form-data">
+						<table border="0" width="650px">
+							<tr>
+								<td class="column-left">Nazwa pokoju: </td><td class="column-center"><input type="text" th:field="*{name}" /></td>
+								<td class="column-right"><span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"/><br/></td>
+	                        </tr>
+	                                                
+	                        <tr>
+								<td class="column-left">Powierzchnia:</td><td class="column-center"> <input type="number" th:field="*{area}" /></td>
+								<td class="column-right"><span th:if="${#fields.hasErrors('area')}" th:errors="*{area}"/><br/></td>
+	                        </tr>
+	                        
+	                        <tr>
+								<td class="column-left">Cena za dzień:</td><td class="column-center"> <input type="number" th:field="*{pricePerDay}" /></td>
+								<td class="column-right"><span th:if="${#fields.hasErrors('pricePerDay')}" th:errors="*{pricePerDay}"/><br/></td>
+	                        </tr>
+
+	                        
+	                         <tr>
+	                            <td class="column-left">Dom:</td>
+	                            <td class="column-center">              
+		                            <select th:field="*{houseStringID}">
+										  <option th:each="house : ${houseList}" th:value="${house.id}" th:text="${'(ID: ' + house.id + ') ' + house.name}"/>
+									</select>
+								</td>
+							</tr>
+							
+							<tr>
+								<td class="column-left">Zdjęcia:</td><td class="column-center"> <input type="file" name="uploadingFiles" accept="image/*" multiple="true"/></td>
+								<td class="column-right"><span th:if="${#fields.hasErrors('pricePerDay')}" th:errors="*{pricePerDay}"/><br/></td>
+	                        </tr>
+	                        
+							</table>
+						<p>
+							<input class="submit-button-orange" type="submit"
+								value="Dodaj pokój" />
+						</p>
+					</form>
+				</div>
+			</div>
+
+			<div th:replace="fragments/footer :: footer" />
+		</div>
+	</div>
+</body>
+</html>

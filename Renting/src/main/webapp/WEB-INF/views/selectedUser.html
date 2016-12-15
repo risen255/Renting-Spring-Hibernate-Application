@@ -1,0 +1,36 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Pokój</title>
+<div th:replace="fragments/beforeBody :: beforeBody" />
+</head>
+
+
+<body>
+	<div class="page">
+		<div class="page-container">
+			<div th:replace="fragments/header :: header" />
+
+			<div class="content">
+				<div class="room">
+					<div class="room-title">
+						Dane o użytkowniku
+					</div>
+				
+					<div class="room-content">
+						ID: <span th:text="${user.id}" /><br/>
+						Login: <span th:text="${user.login}" /><br/>
+						Imię i nazwisko: <span th:text="@{${user.name} + ' ' + ${user.surname}}" /><br />
+						Wiek: <span th:text="${user.age}" /><br/>
+						Płeć: <span th:if="${user.sex} == 'm'" th:text="Mężczyzna" />
+							  <span th:if="${user.sex} == 'f'" th:text="Kobieta" />
+							  <br/>
+					</div>
+				</div>
+			</div>
+
+			<div th:replace="fragments/footer :: footer" />
+		</div>
+	</div>
+</body>
+</html>

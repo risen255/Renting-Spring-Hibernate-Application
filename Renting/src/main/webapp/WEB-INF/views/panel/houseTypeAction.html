@@ -1,0 +1,57 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Strona główna</title>
+<div th:replace="fragments/beforeBody :: beforeBody" />
+</head>
+
+
+<body>
+	<div class="page">
+		<div class="page-container">
+			<div th:replace="fragments/header :: header" />
+			
+			<div class="content">
+				<div class="panel">
+					<div class="panel-title">
+						Panel Administratora
+					</div>
+					
+					<div th:replace="fragments/adminNavigation :: adminNavigation" />
+					
+					<div class="panel-content">
+						<div class="panel-center">
+							
+							<form action="#" th:action="@{/panel/rodzaje-domow}" th:object="${houseTypeAction}" method="post">
+								<table border="0" width="600px">
+									<tr>
+										<td class="column-left" style="color: white">Rodzaj domu: </td><td class="column-center"><input class="field-style" type="text" th:field="*{houseType}" /></td>
+		                           		<td class="column-right" style="color: white"><span class="error" th:if="${#fields.hasErrors('houseType')}" th:errors="*{houseType}" colour="red"/></td>
+		                            </tr>
+		                            
+		                            <tr>
+										<td class="column-left"></td>
+										<td class="column-right"><input class="submit-button-orange" type="submit" value="Dodaj rodzaj domu" /></td>
+		                            </tr>
+								</table>
+							</form>
+							
+							<table style="margin-top: 50px; margin-bottom: 100px;" border="0" width="500px">
+								 <td class="column-left" style="color: white">Aktualne rodzaje domów:</td>
+		                         <td class="column-center">              
+			                         <select>
+										 <option th:each="houseType : ${houseTypeList}" th:text="${houseType.typeName}"/>
+									</select>
+								</td>
+							</table>
+			
+						</div>
+					</div>
+				</div>
+			</div>
+	
+			<div th:replace="fragments/footer :: footer" />
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Pokój</title>
+<div th:replace="fragments/beforeBody :: beforeBody" />
+</head>
+
+
+<body>
+	<div class="page">
+		<div class="page-container">
+			<div th:replace="fragments/header :: header" />
+
+			<div class="content">
+				<div class="room">
+					<a class="room-title-href" th:href="@{'/pokoj/' + ${room.id}}">
+						<div class="room-title">
+							<span th:text="${room.name}" />
+						</div>
+					</a>
+
+					<div class="room-photos-title">Zdjęcia pokoju</div>
+
+					<div class="room-photos">
+						<ul class="rslides">
+							<li th:each="image : ${imageList}">
+								<a href="#"><img th:src="@{'/roomImages/' + ${image.name}}" alt="" /></a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="room-content">
+						Powierzchnia: <span th:text="${room.area}" /> m²<br /> Cena za
+						dzień: <span th:text="${room.pricePerDay}" /> PLN<br /> Nazwa
+						domu: <span th:text="${room.house.name}" /><br /> Miasto: <span
+							th:text="${room.house.city}" /><br /> Typ domu: <span
+							th:text="${room.house.houseType.typeName}" /><br />
+					</div>
+					
+					<div class="room-reservation-linker-title">
+						<a th:if="${reserved == false}" th:href="@{'/pokoj/' + ${room.id} + '/rezerwacja'}">
+							<div class="room-reservation-linker-status-free">
+								Zarezerwuj pokój
+							</div>
+						</a>
+						
+						<div th:if="${reserved == true}" class="room-reservation-linker-status-reserved">
+							Pokój jest już zarezerwowany
+						</div>
+					</div>
+					
+					<div class="room-opinions-title">Opinie</div>
+
+					<div class="room-opinions">
+						<div class="room-opinion" th:each="opinion : ${room.opinionList}">
+							<span style="color: orange;" th:text="${opinion.user.login}" />:<br />
+							<span th:text="${opinion.content}" />
+						</div>
+					</div>
+
+					<div th:if="${userSession.logged == true}" class="room-add-opinion">
+						<form action="#"
+							th:action="@{'/pokoj/' + ${room.id} + '/opinia/dodaj'}"
+							th:object="${opinionRequest}" method="post">
+							Komentarz:<br /> <input type="text" size="100"
+								th:field="*{content}" />
+							<p>
+								<input class="submit-button-orange" type="submit"
+									value="Dodaj opinię" />
+							</p>
+						</form>
+					</div>
+					
+					<div th:if="${userSession.logged == false}" class="room-add-opinion">
+						<b><a href="/zaloguj">Zaloguj się</a></b> aby dodać opinię.
+					</div>
+				</div>
+			</div>
+
+			<div th:replace="fragments/footer :: footer" />
+		</div>
+	</div>
+</body>
+</html>

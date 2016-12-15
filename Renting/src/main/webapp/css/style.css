@@ -1,0 +1,453 @@
+body, html, div, img, ul, li, h1, h2, h3, h4 {
+	margin: 0px;
+	padding: 0px;
+}
+
+div, h1 {
+	font-family: Arial;
+}
+
+a:link, a:visited {
+	text-decoration: none;
+	color: white;
+}
+
+a:hover {
+	color: orange; /* blue */
+}
+
+body {
+	background-color: black;
+	font-size: 16px;
+}
+
+ul li {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	display: inline-block;
+}
+
+li {
+	font-size: 20px;
+	padding: 0px;
+	margin-left: 30px;
+}
+
+.center-500 {
+	margin: 0 auto;
+	margin-top: 20px;
+	width: 500px;
+}
+
+.center-700 {
+	margin: 0 auto;
+	margin-top: 20px;
+	width: 700px;
+}
+
+.page {
+	
+}
+
+.page-container {
+	width: 1600px;
+	margin: 0 auto;
+	background-color: white;
+}
+
+.logo {
+	
+}
+
+.navigation {
+	padding: 5px;
+	text-align: center;
+	background-color: #0167FF;
+        height: 30px;
+}
+
+.footer {
+	padding: 5px;
+	text-align: center;
+	margin-top: 20px;
+	color: white;
+	background-color: #0167FF;
+	margin-top: 10px;
+}
+
+.room {
+	width: 800px;
+	margin: 0 auto;
+	margin-top: 20px;
+	color: white;
+	background-color: #0167FF;
+	-webkit-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+.room-title {
+	background-color: orange;
+	padding: 5px;
+	text-align: center;
+	font-size: 20px;
+}
+
+a:hover.room-title-href {
+	color: white;
+}
+
+.room-content {
+	display: block;
+	width: 400px;
+	padding: 10px;
+	margin-left: 10px;
+}
+
+.adder-linker-content {
+	width: 300px;
+	margin: 0 auto;
+}
+
+.adder-linker-status-title {
+	font-size: 20px;
+	text-align: center;
+	padding: 5px;
+	margin-top: 20px;
+	background-color: green;
+	padding: 5px;
+	
+	-webkit-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+.adder-linker-status-title:hover {
+	color: white;
+	background-color: orange;
+}
+
+
+.room-reservation-linker-title {
+	width: 300px;
+	margin: 0 auto;
+}
+
+.room-reservation-linker-status-free {
+	font-size: 20px;
+	text-align: center;
+	padding: 5px;
+	margin-top: 20px;
+	background-color: green;
+	padding: 5px;
+	
+	-webkit-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+.room-reservation-linker-status-free:hover {
+	color: white;
+	background-color: orange;
+}
+
+.room-reservation-linker-status-reserved {
+	font-size: 20px;
+	text-align: center;
+	padding: 5px;
+	margin-top: 20px;
+	background-color: red;
+	padding: 5px;
+	
+	-webkit-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+.room-reservation-linker-status-reserved:hover {
+	color: white;
+	background-color: red;
+}
+
+.room-opinion-link {
+	margin-top: 15px;
+}
+
+.room-owner-link {
+    margin-top: 15px;
+    margin-right: 15px;
+    float:right;
+}
+
+.room-photos {
+	margin-top: 20px;
+}
+
+.room-photos-title {
+	width: 400px;
+	margin: 0 auto;
+	background-color: black;
+	text-align: center;
+	padding: 5px;
+	margin-top: 20px;
+	font-size: 20px;
+	
+	-webkit-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+.room-opinions {
+	margin-top: 20px;
+}
+
+.room-opinions-title {
+	width: 400px;
+	margin: 0 auto;
+	background-color: black;
+	text-align: center;
+	padding: 5px;
+	margin-top: 50px;
+	font-size: 20px;
+	
+	-webkit-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+.room-opinion {
+	padding: 10px;
+	margin-left: 10px;
+}
+
+.room-add-opinion {
+	padding: 10px;
+	margin-left: 10px;
+}
+
+.link-style-1 {
+	color: green;	
+}
+
+.link-style-1:link {
+	color: green;
+}
+
+.link-style-1:visited {
+	color: green;
+}
+
+.link-style-1:hover {
+	color: orange;
+}
+
+.submit-button-orange {
+	border: none;
+	background-color: green;
+	color: white;
+	padding: 5px;
+	padding-left: 30px;
+	padding-right: 30px;
+	
+	-webkit-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+.submit-style-blue:hover {
+	color: orange;
+}
+
+.submit-button-orange:hover {
+	background-color: orange;
+	color: white;
+}
+
+.submit-button-blue {
+	background-color: #0167FF;
+	color: white;
+	padding: 0px;
+        font-size: 20px;
+        border:0px;
+        cursor: pointer;
+}
+
+.register-action-form {
+	margin: 0 auto;
+	width: 500px;
+}
+
+.login-action-form {
+	margin: 0 auto;
+	width: 500px;
+}
+
+.navigation-admin {
+	padding: 5px;
+	text-align: center;
+	background-color: black;
+    height: 30px;
+}
+
+.panel {
+	width: 800px;
+	margin: 0 auto;
+	margin-top: 20px;
+	color: white;
+	background-color: #0167FF;
+	-webkit-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+.panel-content {
+	color: white;
+	display: block;
+	padding: 10px;
+	margin-left: 10px;
+}
+
+.panel-title {
+	background-color: orange;
+	padding: 5px;
+	text-align: center;
+	font-size: 20px;
+}
+
+.panel-center {
+	text-align: center;
+}
+
+.rslides {
+	margin: 0 auto 40px;
+}
+
+.rslides_tabs {
+	list-style: none;
+	padding: 0;
+	background: rgba(0, 0, 0, .25);
+	box-shadow: 0 0 1px rgba(255, 255, 255, .3), inset 0 0 5px
+		rgba(0, 0, 0, 1.0);
+	-moz-box-shadow: 0 0 1px rgba(255, 255, 255, .3), inset 0 0 5px
+		rgba(0, 0, 0, 1.0);
+	-webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .3), inset 0 0 5px
+		rgba(0, 0, 0, 1.0);
+	font-size: 18px;
+	list-style: none;
+	margin: 0 auto 50px;
+	max-width: 540px;
+	padding: 10px 0;
+	text-align: center;
+	width: 100%;
+}
+
+.rslides_tabs li {
+	display: inline;
+	float: none;
+	margin-right: 1px;
+}
+
+.rslides_tabs a {
+	width: auto;
+	line-height: 20px;
+	padding: 9px 20px;
+	height: auto;
+	background: transparent;
+	display: inline;
+}
+
+.rslides_tabs li:first-child {
+	margin-left: 0;
+}
+
+.rslides_tabs .rslides_here a {
+	background: rgba(255, 255, 255, .1);
+	color: #fff;
+	font-weight: bold;
+}
+
+td.column-left{
+    width: 150px;
+}
+
+td.column-center{
+    width: 200px;
+}
+
+td.column-right{
+    width: 350px;
+}
+
+.error{
+    color: red;
+}
+.form-style-9{
+    max-width: 450px;
+    background: #FAFAFA;
+    padding: 30px;
+    margin: 50px auto;
+    box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    border: 6px solid #305A72;
+}
+.form-style-9 ul{
+    padding:0;
+    margin:0;
+    list-style:none;
+}
+.form-style-9 ul li{
+    display: block;
+    margin-bottom: 10px;
+    min-height: 35px;
+}
+.form-style-9 ul li  .field-style{
+    box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    padding: 8px;
+    outline: none;
+    border: 1px solid #B0CFE0;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+
+}.form-style-9 ul li  .field-style:focus{
+    box-shadow: 0 0 5px #B0CFE0;
+    border:1px solid #B0CFE0;
+}
+.form-style-9 ul li .field-split{
+    width: 49%;
+}
+.form-style-9 ul li .field-full{
+    width: 100%;
+}
+.form-style-9 ul li input.align-left{
+    float:left;
+}
+.form-style-9 ul li input.align-right{
+    float:right;
+}
+.form-style-9 ul li textarea{
+    width: 100%;
+    height: 100px;
+}
+.form-style-9 ul li input[type="button"], 
+.form-style-9 ul li input[type="submit"] {
+    -moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
+    box-shadow: inset 0px 1px 0px 0px #3985B1;
+    background-color: #216288;
+    border: 1px solid #17445E;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFFFFF;
+    padding: 8px 18px;
+    text-decoration: none;
+    font: 12px Arial, Helvetica, sans-serif;
+}
+.form-style-9 ul li input[type="button"]:hover, 
+.form-style-9 ul li input[type="submit"]:hover {
+    background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
+    background-color: #28739E;
+}
